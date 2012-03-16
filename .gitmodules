@@ -322,7 +322,7 @@
 	path = vim/bundle/skwp-vim-powerline
 	url = https://github.com/skwp/vim-powerline.git
   ignore = dirty
-[submodule "vim/bundle/vim-scripts-YankRing"]
-	path = vim/bundle/vim-scripts-YankRing
-	url = https://github.com/vim-scripts/YankRing.vim
+[submodule "vim/bundle/bigfish-vim-js-beautify"]
+	path = vim/bundle/bigfish-vim-js-beautify
+	url = https://github.com/bigfish/vim-js-beautify.git
   ignore = dirty
