@@ -14,6 +14,7 @@ task :install => [:submodules] do
   linkables += Dir.glob('git/*') if want_to_install?('git')
   linkables += Dir.glob('irb/*') if want_to_install?('irb/pry')
   linkables += Dir.glob('ruby/*') if want_to_install?('ruby (gems)')
+  linkables += Dir.glob('ctags/*') if want_to_install?('ctags config (better js/ruby support)')
   linkables += Dir.glob('vimify/*') if want_to_install?('vimification of mysql/irb/command line')
   linkables += Dir.glob('{vim,vimrc}') if want_to_install?('vim')
   linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')
@@ -54,10 +55,10 @@ end
 
 task :zsh_themes do
   if File.exist?("#{ENV['HOME']}/.oh-my-zsh/modules/prompt/functions")
-    puts "Detected oh-my-zsh @sorin-ionescu version."
+    puts "Detected prezto (oh-my-zsh @sorin-ionescu)."
     run %{ ln -nfs #{ENV["PWD"]}/oh-my-zsh/modules/prompt/functions/* $HOME/.oh-my-zsh/modules/prompt/functions/ } if want_to_install?('zsh themes')
   elsif File.exist?("#{ENV['HOME']}/.oh-my-zsh")
-    puts "Detected oh-my-zsh @robbyrussell version."
+    puts "Detected oh-my-zsh @robbyrussell."
     run %{ ln -nfs #{ENV["PWD"]}/oh-my-zsh/themes/* $HOME/.oh-my-zsh/themes/ } if want_to_install?('zsh themes')
   end
 end

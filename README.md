@@ -77,7 +77,7 @@ Please install fonts from fonts/ directory. These are used to give a really nice
 Homebrew is _the missing package manager for OSX_. To install:
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+/usr/bin/ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
 ```
 
 With homebrew installed, install some packages:
@@ -109,15 +109,16 @@ If that doesn't work, move the OSX supplied ctags [like so](http://www.mattpolit
 sudo mv /usr/bin/ctags /usr/bin/ctags_original
 ```
 
-### [oh-my-zsh](https://github.com/sorin-ionescu/oh-my-zsh)
+### [oh-my-zsh](https://github.com/sorin-ionescu/prezto)
 
-`git clone https://github.com/sorin-ionescu/oh-my-zsh.git ~/.oh-my-zsh`
-`cd ~/.oh-my-zsh && git submodule update --init --recursive`
+```bash
+git clone --recursive git://github.com/sorin-ionescu/prezto.git ~/.oh-my-zsh
+```
 
 We prefer the @sorin-ionescu rewrite of Oh My Zsh. It will eventually be shipped
 as a submodule of YADR, although you can use the original @robbyrussell version as well.
 
-You only need to do the two commands above. The rest of the installation is done
+You only need to do the one command above. The rest of the installation is done
 by YADR, which ships with a tie-in to sorin's OMZ.
 
 ### [fasd](https://github.com/clvv/fasd)
